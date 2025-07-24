@@ -1,31 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact Us - Online Solution</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
-        h1 { text-align: center; color: #333; }
-        form { display: flex; flex-direction: column; }
-        input, textarea { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: green; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: darkgreen; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Online Solution</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Contact Us</h1>
-        <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST">
-            <input type="text" name="First Name" placeholder="First Name" required>
-            <input type="text" name="Last Name" placeholder="Last Name" required>
-            <input type="tel" name="Phone" placeholder="Phone Number" required>
-            <input type="email" name="Email" placeholder="Email ID" required>
-            <textarea name="Message" placeholder="Your message..." rows="5" required></textarea>
-            <input type="hidden" name="_next" value="https://sonaton123.github.io/online-solution/thankyou.html">
-            <input type="hidden" name="_captcha" value="false">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+<body style="font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 20px;">
+  <h2>Contact Us</h2>
+  <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST" style="max-width: 400px; background: white; padding: 20px; border-radius: 8px;">
+    <label>First Name</label><br>
+    <input type="text" name="First Name" required><br><br>
+
+    <label>Last Name</label><br>
+    <input type="text" name="Last Name" required><br><br>
+
+    <label>Phone Number</label><br>
+    <input type="text" name="Phone Number" required><br><br>
+
+    <label>Email ID</label><br>
+    <input type="email" name="Email" required><br><br>
+
+    <label>Message / Complaint</label><br>
+    <textarea name="Message" rows="4" required></textarea><br><br>
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://sonaton123.github.io/online-solution/thank-you.html">
+
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
