@@ -5,43 +5,133 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Online Solution</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="file"] {
+      padding: 5px;
+    }
+
+    button {
+      background: #007b5e;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005f47;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    .upi-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .upi-section img {
+      max-width: 200px;
+      height: auto;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 8px;
+    }
+
+    .upi-id {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Contact Us</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST">
-        <input type="hidden" name="_redirect" value="https://sonaton123.github.io/online-solution/thankyou.html">
-        <input type="hidden" name="_captcha" value="false">
-        <label>First Name:</label>
-        <input type="text" name="First Name" required>
-        <label>Last Name:</label>
-        <input type="text" name="Last Name" required>
-        <label>Phone Number:</label>
-        <input type="tel" name="Phone Number" required>
-        <label>Email ID:</label>
-        <input type="email" name="Email ID" required>
-        <label>Your Message/Complaint:</label>
-        <textarea name="Message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <div class="upi-info">
-        <p><strong>UPI ID:</strong> sonatongogoi123-3@okicici</p>
-        <p><strong>Mobile:</strong> 9880332382</p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Online Solution</p>
-  </footer>
+    <form action="https://formsubmit.co/el/kugafa" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="first-name">First Name</label>
+      <input type="text" name="First Name" required />
+
+      <label for="last-name">Last Name</label>
+      <input type="text" name="Last Name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="Phone Number" required />
+
+      <label for="email">Email ID</label>
+      <input type="email" name="Email" required />
+
+      <label for="message">Message / Complaint</label>
+      <textarea name="Message" rows="4" required></textarea>
+
+      <label for="attachment">Upload File</label>
+      <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required />
+      <div class="note">Accepted formats: PDF, Word, JPG, PNG (Max: 5MB)</div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="upi-section">
+      <h3>Support via UPI</h3>
+      <img src="your-upi-qr.png" alt="UPI QR Code" />
+      <div class="upi-id">sonatongogoi123-3@okicici</div>
+    </div>
+  </div>
 </body>
 </html>
