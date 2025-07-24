@@ -1,27 +1,93 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact Us</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Online Solution</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #27ae60;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .upi-info {
+      margin-top: 30px;
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .upi-info p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-<h1>Contact Us</h1>
-<form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST">
-<input type="text" name="First Name" placeholder="First Name" required><br>
-<input type="text" name="Last Name" placeholder="Last Name" required><br>
-<input type="tel" name="Phone" placeholder="Phone Number" required><br>
-<input type="email" name="Email" placeholder="Email ID" required><br>
-<select name="Service Type" required>
-<option value="">Select Service Type</option>
-<option value="Online Service">Online Service</option>
-<option value="Home Service">Home Service</option>
-</select><br>
-<textarea name="Message" placeholder="Your complaint / message here" required></textarea><br>
-<input type="hidden" name="_next" value="https://thankyou.page/">
-<input type="submit" value="Submit">
-</form>
-<h3>Pay Us:</h3>
-<p>UPI ID: sonatongogoi123-3@okicici</p>
-<img src="qr-code.jpg" alt="UPI QR Code" width="200"/>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form name="submit-to-google-sheet">
+      <label>First Name</label>
+      <input type="text" name="First Name" required />
+      <label>Last Name</label>
+      <input type="text" name="Last Name" required />
+      <label>Phone Number</label>
+      <input type="text" name="Phone Number" required />
+      <label>Email ID</label>
+      <input type="email" name="Email ID" required />
+      <label>Message / Complaint</label>
+      <textarea name="Message" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="upi-info">
+      <h3>Payment Info:</h3>
+      <p>💳 UPI ID: <strong>sonatongogoi123-3@okicici</strong></p>
+      <p>📲 Mobile (UPI): <strong>9880332382</strong></p>
+    </div>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you! We will contact you shortly."))
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
 </body>
 </html>
