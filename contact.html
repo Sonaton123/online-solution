@@ -1,37 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Online Solution</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Contact Us - Online Solution</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
+        h1 { text-align: center; color: #333; }
+        form { display: flex; flex-direction: column; }
+        input, textarea { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: green; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: darkgreen; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <form action="https://formsubmit.co/el/kugafa" method="POST">
-      <input type="text" name="First Name" placeholder="First Name" required><br>
-      <input type="text" name="Last Name" placeholder="Last Name" required><br>
-      <input type="tel" name="Phone" placeholder="Phone Number" required><br>
-      <input type="email" name="Email" placeholder="Email ID" required><br>
-      <textarea name="Message" placeholder="Your Complaint or Message" required></textarea><br>
-      <button type="submit">Submit</button>
-    </form>
-    <div>
-      <h3>Payment Details</h3>
-      <p>UPI ID: sonatongogoi123-3@okicici</p>
-      <p>Phone/UPI Number: 9880332382</p>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST">
+            <input type="text" name="First Name" placeholder="First Name" required>
+            <input type="text" name="Last Name" placeholder="Last Name" required>
+            <input type="tel" name="Phone" placeholder="Phone Number" required>
+            <input type="email" name="Email" placeholder="Email ID" required>
+            <textarea name="Message" placeholder="Your message..." rows="5" required></textarea>
+            <input type="hidden" name="_next" value="https://sonaton123.github.io/online-solution/thankyou.html">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit">Submit</button>
+        </form>
     </div>
-  </main>
-  <footer>© 2025 Online Solution</footer>
 </body>
 </html>
