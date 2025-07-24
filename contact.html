@@ -4,30 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Online Solution</title>
+  <title>Contact Us - Online Solution</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 20px;">
-  <h2>Contact Us</h2>
-  <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST" style="max-width: 400px; background: white; padding: 20px; border-radius: 8px;">
-    <label>First Name</label><br>
-    <input type="text" name="First Name" required><br><br>
-
-    <label>Last Name</label><br>
-    <input type="text" name="Last Name" required><br><br>
-
-    <label>Phone Number</label><br>
-    <input type="text" name="Phone Number" required><br><br>
-
-    <label>Email ID</label><br>
-    <input type="email" name="Email" required><br><br>
-
-    <label>Message / Complaint</label><br>
-    <textarea name="Message" rows="4" required></textarea><br><br>
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://sonaton123.github.io/online-solution/thank-you.html">
-
-    <button type="submit">Submit</button>
-  </form>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST">
+        <input type="hidden" name="_redirect" value="https://sonaton123.github.io/online-solution/thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
+        <label>First Name:</label>
+        <input type="text" name="First Name" required>
+        <label>Last Name:</label>
+        <input type="text" name="Last Name" required>
+        <label>Phone Number:</label>
+        <input type="tel" name="Phone Number" required>
+        <label>Email ID:</label>
+        <input type="email" name="Email ID" required>
+        <label>Your Message/Complaint:</label>
+        <textarea name="Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="upi-info">
+        <p><strong>UPI ID:</strong> sonatongogoi123-3@okicici</p>
+        <p><strong>Mobile:</strong> 9880332382</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Online Solution</p>
+  </footer>
 </body>
 </html>
