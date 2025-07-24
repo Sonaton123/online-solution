@@ -1,1 +1,72 @@
-<!DOCTYPE html><html><head><title>Online Solution</title></head><body><h1>Welcome to Online Solution</h1><p>Your trusted CSC & Home Service help center.</p><a href='contact.html'>Contact Us</a></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Solution</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Online Solution</h1>
+    <p>Your trusted partner for Online and Home Services</p>
+  </header>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Online Form Submission</li>
+      <li>Aadhaar Services</li>
+      <li>Pan Card Services</li>
+      <li>Government Scheme Assistance</li>
+      <li>Home Laptop/PC Repairing</li>
+      <li>PC/Laptop Assembling</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required />
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="service">Service Type:</label>
+      <select id="service" name="service" required>
+        <option value="">Select</option>
+        <option value="online">Online Service</option>
+        <option value="home">Home Service</option>
+      </select>
+
+      <label for="message">Message/Complaint:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="thankYouMessage" class="hidden">Thank you! We will contact you shortly.</p>
+  </section>
+
+  <footer>
+    <p>Contact us on WhatsApp: 9880332382 | Email: sonatongogoi123@gmail.com</p>
+    <p>UPI: sonatongogoi123-3@okicici</p>
+    <img src="qr.jpg" alt="UPI QR Code" class="qr-code" />
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("contactForm").style.display = "none";
+      document.getElementById("thankYouMessage").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
