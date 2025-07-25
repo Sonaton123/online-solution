@@ -2,88 +2,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us - Online Solution</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      background: #fff;
-      margin: 50px auto;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    input[type="submit"] {
-      background: #28a745;
-      color: white;
-      cursor: pointer;
-      border: none;
-      transition: background 0.3s;
-    }
-    input[type="submit"]:hover {
-      background: #218838;
-    }
-  </style>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – Online Solution</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Online Solution</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Contact / Complaint Form</h2>
+      <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST" enctype="multipart/form-data">
+        <!-- Redirect & captcha -->
+        <input type="hidden" name="_next" value="thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
 
-<div class="container">
-  <h2>Contact Us</h2>
-  <form action="https://formsubmit.co/sonatongogoi123@gmail.com" method="POST" enctype="multipart/form-data">
-    
-    <!-- Redirect to Thank You page -->
-    <input type="hidden" name="_next" value="https://sonaton123.github.io/online-solution/thankyou.html">
-    <input type="hidden" name="_captcha" value="false">
+        <label>First Name<input type="text" name="First Name" required></label>
+        <label>Last Name<input type="text" name="Last Name" required></label>
+        <label>Mobile Number<input type="tel" name="Mobile Number" required></label>
+        <label>Email ID<input type="email" name="Email ID" required></label>
+        <label>Service Type
+          <select name="Service Type" required>
+            <option value="">--Select--</option>
+            <option value="Home Service">Home Service</option>
+            <option value="Online Service">Online Service</option>
+          </select>
+        </label>
+        <label>Message / Complaint<textarea name="Message" rows="4" required></textarea></label>
+        <label>Upload File (max 5MB)
+          <input type="file" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </label>
+        <input type="submit" value="Submit">
+      </form>
 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="First Name" required>
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="Last Name" required>
-
-    <label for="phone">Mobile Number</label>
-    <input type="tel" id="phone" name="Mobile Number" required>
-
-    <label for="email">Email ID</label>
-    <input type="email" id="email" name="Email ID" required>
-
-    <label for="service">Service Type</label>
-    <select id="service" name="Service Type" required>
-      <option value="">--Select--</option>
-      <option value="Home Service">Home Service</option>
-      <option value="Online Service">Online Service</option>
-    </select>
-
-    <label for="message">Message / Complaint</label>
-    <textarea id="message" name="Message" rows="4" required></textarea>
-
-    <label for="file">Upload File (optional)</label>
-    <input type="file" id="file" name="attachment">
-
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
+      <div class="upi-info">
+        <h3>Support via UPI</h3>
+        <img src="qr-code.png" alt="UPI QR Code" width="200">
+        <p><strong>UPI ID:</strong> sonatongogoi123‑3@okicici</p>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 Online Solution</p>
+    </footer>
+  </div>
 </body>
 </html>
+
