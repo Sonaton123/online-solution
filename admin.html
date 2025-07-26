@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - Online Solution</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .login-box, .admin-box {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Section -->
+  <div class="login-box" id="loginBox">
+    <h2>Admin Login</h2>
+    <input type="password" id="adminPassword" placeholder="Enter Admin Password" />
+    <button onclick="checkPassword()">Login</button>
+    <p id="errorMsg" style="color:red;"></p>
+  </div>
+
+  <!-- Admin Panel Section -->
+  <div class="admin-box hidden" id="adminPanel">
+    <h2>Welcome, Admin 👋</h2>
+    <p>Admin content will be displayed here.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const correctPassword = "sonaton@admin123"; // You can change this
+
+    function checkPassword() {
+      const entered = document.getElementById("adminPassword").value;
+      if (entered === correctPassword) {
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("adminPanel").classList.remove("hidden");
+      } else {
+        document.getElementById("errorMsg").innerText = "Incorrect Password!";
+      }
+    }
+
+    function logout() {
+      document.getElementById("adminPassword").value = "";
+      document.getElementById("adminPanel").classList.add("hidden");
+      document.getElementById("loginBox").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
