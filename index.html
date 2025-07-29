@@ -1,128 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Online Solution</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-    }
-    header {
-      background: #0a8754;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header img {
-      height: 60px;
-    }
-    form {
-      max-width: 600px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, textarea {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background: #0a8754;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #086c41;
-    }
-  </style>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <script type="module" src="js/firebase-config.js"></script>
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt="Online Solution Logo" />
-    <h1>Online Solution</h1>
+    <img src="assets/logo.png" alt="Logo" width="120">
+    <h1>Welcome to Online Solution</h1>
   </header>
-
-  <form id="contactForm">
-    <h2>Contact Us</h2>
-    <input type="text" id="firstName" placeholder="First Name" required />
-    <input type="text" id="lastName" placeholder="Last Name" required />
-    <input type="tel" id="phone" placeholder="Phone Number" required />
-    <input type="email" id="email" placeholder="Email Address" required />
-    <textarea id="message" placeholder="Message or Complaint" required></textarea>
-    <label>Upload File:</label>
-    <input type="file" id="fileInput" />
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- Firebase SDK -->
-  <script type="module">
-    // Import Firebase modules
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-
-    // Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyA7XDbgP1o64rmeqxuf_Dfu8kD4m7mVjGg",
-      authDomain: "online-solution-1b8a4.firebaseapp.com",
-      projectId: "online-solution-1b8a4",
-      storageBucket: "online-solution-1b8a4.appspot.com",
-      messagingSenderId: "431791580403",
-      appId: "1:431791580403:web:4fd2d70fa7130cb63b4386"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const storage = getStorage(app);
-
-    // Form handling
-    const form = document.getElementById('contactForm');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const firstName = document.getElementById('firstName').value;
-      const lastName = document.getElementById('lastName').value;
-      const phone = document.getElementById('phone').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      const file = document.getElementById('fileInput').files[0];
-
-      let fileURL = "";
-
-      if (file) {
-        const storageRef = ref(storage, `uploads/${Date.now()}_${file.name}`);
-        await uploadBytes(storageRef, file);
-        fileURL = await getDownloadURL(storageRef);
-      }
-
-      await addDoc(collection(db, "submissions"), {
-        firstName,
-        lastName,
-        phone,
-        email,
-        message,
-        fileURL,
-        timestamp: new Date()
-      });
-
-      alert("Thank you! We will contact you shortly.");
-      form.reset();
-    });
-  </script>
-
+  <main>
+    <p>This is the home page of Online Solution.</p>
+  </main>
 </body>
 </html>
