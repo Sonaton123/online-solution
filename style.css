@@ -1,51 +1,29 @@
-
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
   margin: 0;
   padding: 0;
+  background: #f0f0f0;
 }
+
 header {
-  background: #ffcc00;
-  color: #000;
-  padding: 1rem;
+  background: #007f5f;
+  color: white;
+  padding: 1em;
   text-align: center;
 }
+
 nav a {
-  margin: 0 10px;
+  margin: 0 1em;
+  color: white;
   text-decoration: none;
-  color: #000;
 }
-main {
-  padding: 20px;
-}
-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-}
-form input, form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-button {
-  background: #008000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.upi-info {
-  margin-top: 20px;
-  font-size: 16px;
-}
+
 footer {
   background: #222;
-  color: #fff;
+  color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
