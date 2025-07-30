@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Online Solution</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <form id="contactForm">
+    <input type="text" id="firstName" placeholder="First Name" required /><br>
+    <input type="text" id="lastName" placeholder="Last Name" required /><br>
+    <input type="tel" id="phone" placeholder="Phone Number" required /><br>
+    <input type="email" id="email" placeholder="Email Address" required /><br>
+    <textarea id="message" placeholder="Your Message" required></textarea><br>
+    <input type="file" id="fileInput"><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="thankyou" style="display:none;">Thank you! We will contact you shortly.</p>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
