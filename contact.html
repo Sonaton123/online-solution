@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us - Online Solution</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – Online Solution</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
+  <h1>Contact Us</h1>
+  <form id="contactForm">
+    <input type="text" id="firstName" placeholder="First Name" required /><br>
+    <input type="text" id="lastName" placeholder="Last Name" required /><br>
+    <input type="tel" id="phone" placeholder="Phone Number" required /><br>
+    <input type="email" id="email" placeholder="Email Address" required /><br>
+    <textarea id="message" placeholder="Your Message" required></textarea><br>
+    <input type="file" id="fileInput"><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="thankyou" style="display:none;">Thank you! We will contact you shortly.</p>
 
-  <main>
-    <form id="contactForm">
-      <input type="text" placeholder="First Name" id="firstName" required><br>
-      <input type="text" placeholder="Last Name" id="lastName" required><br>
-      <input type="tel" placeholder="Phone Number" id="phone" required><br>
-      <input type="email" placeholder="Email ID" id="email" required><br>
-      <textarea placeholder="Your Message" id="message" required></textarea><br>
-      <input type="file" id="fileUpload"><br>
-      <button type="submit">Submit</button>
-    </form>
-    <p id="responseMsg"></p>
-  </main>
-
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
-  <script src="contact.js"></script>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
