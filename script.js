@@ -1,4 +1,4 @@
-// Firebase Config Setup
+// Your Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyA7XDbgP1o64rmeqxuf_Dfu8kD4m7mVjGg",
   authDomain: "online-solution-1b8a4.firebaseapp.com",
@@ -8,12 +8,10 @@ const firebaseConfig = {
   appId: "1:431791580403:web:4fd2d70fa7130cb63b4386"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const storage = firebase.storage();
 
-// Handle Form Submit
 document.getElementById("contactForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
@@ -22,14 +20,13 @@ document.getElementById("contactForm").addEventListener("submit", async function
   const phone = document.getElementById("phone").value;
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
-  const fileInput = document.getElementById("file");
-  const file = fileInput.files[0];
+  const fileInput = document.getElementById("fileInput").files[0];
 
   let fileURL = "";
 
-  if (file) {
-    const storageRef = storage.ref("uploads/" + file.name);
-    await storageRef.put(file);
+  if (fileInput) {
+    const storageRef = storage.ref("uploads/" + Date.now() + "_" + fileInput.name);
+    await storageRef.put(fileInput);
     fileURL = await storageRef.getDownloadURL();
   }
 
@@ -40,9 +37,9 @@ document.getElementById("contactForm").addEventListener("submit", async function
     email,
     message,
     fileURL,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
   });
 
-  alert("Thank you! We will contact you shortly.");
   document.getElementById("contactForm").reset();
+  document.getElementById("thankyou").style.display = "block";
 });
