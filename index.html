@@ -3,26 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Online Solution</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Online Solution - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e8f0fe;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .header {
+      background-color: #3aafa9;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+    }
+    .main-content h1 {
+      font-size: 2.5rem;
+      color: #2b7a78;
+    }
+    .main-content p {
+      max-width: 600px;
+      font-size: 18px;
+      color: #555;
+    }
+    .btn {
+      padding: 12px 24px;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: #3aafa9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #2b7a78;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #def2f1;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Online Solution Logo" class="logo" />
-    <h1>Welcome to Online Solution</h1>
-    <p>Your trusted CSC & Digital Help Service</p>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h2>Our Services</h2>
-      <p>CSC Services/Leptop,Desktop Repairing Centre and Home service</p>
-      <a href="contact.html" class="btn">Submit Your Problem</a>
-    </section>
-  </main>
+  <div class="header">
+    <h1>Online Solution</h1>
+    <p>Your Trusted CSC & Home Service Partner</p>
+  </div>
+
+  <div class="main-content">
+    <h1>Welcome to Online Solution</h1>
+    <p>We help people facing issues in online applications, CSC services, and offer home services like laptop/desktop repair & assembling. Click below to raise your complaint or service request.</p>
+    <a class="btn" href="contact.html">Submit a Request</a>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Online Solution. All rights reserved.</p>
+    &copy; 2025 Online Solution. All Rights Reserved.
   </footer>
+
 </body>
 </html>
