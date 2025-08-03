@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel - Online Solution</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Login</h2>
+    <form id="loginForm">
+      <input type="password" id="adminPassword" placeholder="Enter admin password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <div id="dashboard" style="display: none;">
+      <h2>Submitted Complaints</h2>
+      <div id="complaintsList"></div>
+    </div>
+  </div>
+
+  <script src="firebase.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
