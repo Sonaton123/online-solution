@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Admin Panel - Online Solution</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,14 +12,24 @@
     <form id="loginForm">
       <input type="password" id="adminPassword" placeholder="Enter admin password" required />
       <button type="submit">Login</button>
+      <p id="loginError" class="error"></p>
     </form>
 
-    <div id="dashboard" style="display: none;">
-      <h2>Submitted Complaints</h2>
-      <div id="complaintsList"></div>
+    <div id="dashboard" style="display:none;">
+      <div class="topbar">
+        <h2>Submitted Complaints</h2>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+      <div id="complaintsList" class="list"></div>
     </div>
   </div>
 
+  <!-- Firebase SDKs (v8) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+  <!-- Your project scripts -->
   <script src="firebase.js"></script>
   <script src="admin.js"></script>
 </body>
