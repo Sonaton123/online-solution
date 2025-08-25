@@ -12,4 +12,5 @@ window.FIREBASE_CONFIG = {
 try { firebase.initializeApp(window.FIREBASE_CONFIG); } catch (e) { /* already init */ }
 
 // Default admin password: Sonabhai@123 (SHA-256)
-window.ADMIN_PASSWORD_HASH = "f9f9084e648ae0d2d7775a39c8b87c8191d23bdf086f8af47f6beee3172f4ca0";
+window.ADMIN_PASSWORD_HASH = "51a304fc983f134ab1907b118e7cca9a9dff4c13e68e9c85adb54e4ef078262e";
+
