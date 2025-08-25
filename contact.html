@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Contact Us - Online Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
+  <header><h1>Contact Us</h1></header>
 
   <main>
     <form id="contactForm">
@@ -24,13 +22,12 @@
     <p id="responseMsg"></p>
   </main>
 
-  <!-- Firebase SDKs (same as admin panel) -->
+  <!-- Firebase SDKs (v8) -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-  <!-- Your Firebase setup (only firebase.js, config + password hash inside) -->
-  <script src="firebase.js"></script>
+  <!-- Your form logic (has config + init inside) -->
   <script src="contact.js"></script>
 </body>
 </html>
