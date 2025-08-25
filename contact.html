@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact Us - Online Solution</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,10 +24,13 @@
     <p id="responseMsg"></p>
   </main>
 
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
+  <!-- Firebase SDKs (same as admin panel) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Your Firebase setup (only firebase.js, config + password hash inside) -->
+  <script src="firebase.js"></script>
   <script src="contact.js"></script>
 </body>
 </html>
