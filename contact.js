@@ -20,28 +20,34 @@ document.getElementById("contactForm").addEventListener("submit", async function
   const lastName = document.getElementById("lastName").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const email = document.getElementById("email").value.trim();
-  const serviceType = document.getElementById("serviceType").value;
   const message = document.getElementById("message").value.trim();
   const file = document.getElementById("fileUpload").files[0];
 
   let fileURL = "";
 
-  if (file) {
-    const storageRef = storage.ref(`uploads/${Date.now()}_${file.name}`);
-    await storageRef.put(file);
-    fileURL = await storageRef.getDownloadURL();
+  try {
+    // File upload
+    if (file) {
+      const storageRef = storage.ref(`uploads/${Date.now()}_${file.name}`);
+      await storageRef.put(file);
+      fileURL = await storageRef.getDownloadURL();
+    }
+
+    // Save to Firestore
+    await db.collection("contacts").add({
+      firstName,
+      lastName,
+      phone,
+      email,
+      message,
+      fileURL,
+      createdAt: new Date()
+    });
+
+    // Redirect to Thank You page
+    window.location.href = "thankyou.html";
+  } catch (err) {
+    console.error("Error saving contact form:", err);
+    document.getElementById("responseMsg").textContent = "Something went wrong. Please try again.";
   }
-
-  await db.collection("contacts").add({
-    firstName,
-    lastName,
-    phone,
-    email,
-    serviceType,
-    message,
-    fileURL,
-    createdAt: new Date()
-  });
-
-  window.location.href = "thankyou.html";
 });
