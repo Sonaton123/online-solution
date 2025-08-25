@@ -5,29 +5,111 @@
   <title>Contact Us - Online Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    main{max-width:680px;margin:24px auto;padding:0 12px}
+    form{display:grid;gap:10px}
+    input,textarea,button{padding:10px;border-radius:8px;border:1px solid #ccc}
+    button{background:#18a058;color:#fff;border:none;font-weight:700}
+    #responseMsg{min-height:20px}
+  </style>
 </head>
 <body>
   <header><h1>Contact Us</h1></header>
 
   <main>
     <form id="contactForm">
-      <input type="text" placeholder="First Name" id="firstName" required><br>
-      <input type="text" placeholder="Last Name" id="lastName" required><br>
-      <input type="tel" placeholder="Phone Number" id="phone" required><br>
-      <input type="email" placeholder="Email ID" id="email" required><br>
-      <textarea placeholder="Your Message" id="message" required></textarea><br>
-      <input type="file" id="fileUpload"><br>
+      <input type="text" placeholder="First Name" id="firstName" required>
+      <input type="text" placeholder="Last Name" id="lastName" required>
+      <input type="tel" placeholder="Phone Number" id="phone" required>
+      <input type="email" placeholder="Email ID" id="email" required>
+      <textarea placeholder="Your Message" id="message" required></textarea>
+      <input type="file" id="fileUpload">
       <button type="submit">Submit</button>
     </form>
     <p id="responseMsg"></p>
   </main>
 
-  <!-- Firebase SDKs (v8) -->
+  <!-- Firebase SDKs (v8 to match admin) -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-  <!-- Your form logic (has config + init inside) -->
-  <script src="contact.js"></script>
+  <script>
+    // --- Firebase Config (same as admin) ---
+    const firebaseConfig = {
+      apiKey: "AIzaSyA7XDbgP1o64rmeqxuf_Dfu8kD4m7mVjGg",
+      authDomain: "online-solution-1b8a4.firebaseapp.com",
+      projectId: "online-solution-1b8a4",
+      storageBucket: "online-solution-1b8a4.appspot.com",
+      messagingSenderId: "431791580403",
+      appId: "1:431791580403:web:4fd2d70fa7130cb63b4386"
+    };
+
+    // Safe init
+    try { firebase.initializeApp(firebaseConfig); } catch (e) {}
+
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+    const form = document.getElementById("contactForm");
+    const resp = document.getElementById("responseMsg");
+
+    // Quick visible ping to confirm JS loaded
+    resp.textContent = "Page ready. You can submit.";
+    resp.style.color = "#2b7";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      resp.textContent = "";
+      resp.style.color = "";
+
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName  = document.getElementById("lastName").value.trim();
+      const phone     = document.getElementById("phone").value.trim();
+      const email     = document.getElementById("email").value.trim();
+      const message   = document.getElementById("message").value.trim();
+      const file      = document.getElementById("fileUpload").files[0] || null;
+
+      if (!firstName || !lastName || !phone || !email || !message) {
+        resp.textContent = "Please fill all fields.";
+        resp.style.color = "crimson";
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = "Submitting...";
+
+      let fileURL = "";
+
+      try {
+        // Optional file upload
+        if (file) {
+          const path = `uploads/${Date.now()}_${file.name}`;
+          const ref = storage.ref(path);
+          await ref.put(file);
+          fileURL = await ref.getDownloadURL();
+        }
+
+        // Save to the same collection admin reads
+        await db.collection("contact_submissions").add({
+          name: `${firstName} ${lastName}`,
+          firstName, lastName, phone, email, message, fileURL,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        resp.textContent = "Thank you! We received your message. Redirecting…";
+        resp.style.color = "green";
+
+        setTimeout(() => { window.location.href = "thankyou.html"; }, 700);
+
+      } catch (err) {
+        console.error("Submit error:", err);
+        resp.textContent = (err && err.message) ? err.message : "Something went wrong. Please try again.";
+        resp.style.color = "crimson";
+      } finally {
+        btn.disabled = false; btn.textContent = "Submit";
+      }
+    });
+  </script>
 </body>
 </html>
